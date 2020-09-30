@@ -1,0 +1,22 @@
+--- a/drw.c	2020-09-26 19:06:05.929479683 +0545
++++ b/drw.c	2020-09-26 19:10:40.108541114 +0545
+@@ -133,19 +133,6 @@
+ 		die("no font specified.");
+ 	}
+ 
+-	/* Do not allow using color fonts. This is a workaround for a BadLength
+-	 * error from Xft with color glyphs. Modelled on the Xterm workaround. See
+-	 * https://bugzilla.redhat.com/show_bug.cgi?id=1498269
+-	 * https://lists.suckless.org/dev/1701/30932.html
+-	 * https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=916349
+-	 * and lots more all over the internet.
+-	 */
+-	FcBool iscol;
+-	if(FcPatternGetBool(xfont->pattern, FC_COLOR, 0, &iscol) == FcResultMatch && iscol) {
+-		XftFontClose(drw->dpy, xfont);
+-		return NULL;
+-	}
+-
+ 	font = ecalloc(1, sizeof(Fnt));
+ 	font->xfont = xfont;
+ 	font->pattern = pattern;
