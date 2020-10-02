@@ -17,4 +17,4 @@ The fonts I recommend are:
 <li>JoyPixels</li>
 <li>Hurmit Medium Nerd Font (optional; for rofi)</li>
 </ul>
-<img src='/nordnight.jpg'>
+<img src='/screenshots/imgonline-com-ua-twotoone-byNO7a5jIbXGHq.jpg'>
